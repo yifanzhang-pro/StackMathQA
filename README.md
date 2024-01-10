@@ -45,7 +45,7 @@ We appreciate your use of StackMathQA in your work. If you find this repository 
 ```bibtex
 @misc{stackmathqa2024,
       title={StackMathQA: A Curated Collection of 2 Million High-Quality Mathematical Questions and Answers Sourced from Stack Exchange}, 
-      author={Yifan Zhang, et al.},
+      author={Zhang, Yifan},
       year={2024},
 }
 ```
