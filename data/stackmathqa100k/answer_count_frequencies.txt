@@ -1,0 +1,15 @@
+Answer Count: 1, Frequency: 45835
+Answer Count: 2, Frequency: 13105
+Answer Count: 3, Frequency: 4805
+Answer Count: 4, Frequency: 1842
+Answer Count: 5, Frequency: 675
+Answer Count: 6, Frequency: 257
+Answer Count: 7, Frequency: 82
+Answer Count: 8, Frequency: 37
+Answer Count: 9, Frequency: 19
+Answer Count: 10, Frequency: 7
+Answer Count: 11, Frequency: 2
+Answer Count: 12, Frequency: 4
+Answer Count: 13, Frequency: 2
+Answer Count: 15, Frequency: 2
+Answer Count: 18, Frequency: 1

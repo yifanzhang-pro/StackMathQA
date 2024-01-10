@@ -1,0 +1,11 @@
+Source: Stack Exchange (Math), Count: 99013
+Source: MathOverflow, Count: 626
+Source: Stack Exchange (Stats), Count: 182
+Source: Stack Exchange (Physics), Count: 179
+
+
+Line Counts of Original JSONL Files:
+math.stackexchange.com.jsonl: 1407739 lines
+mathoverflow.net.jsonl: 166592 lines
+stats.stackexchange.com.jsonl: 156143 lines
+physics.stackexchange.com.jsonl: 226532 lines
