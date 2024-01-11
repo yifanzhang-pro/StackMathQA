@@ -18,9 +18,9 @@ configs:
   data_files: data/stackmathqa200k/all.jsonl
 - config_name: stackmathqa100k
   data_files: data/stackmathqa100k/all.jsonl
-- config_name: stackmathqa-1q1a
+- config_name: stackmathqafull-1q1a
   data_files: preprocessed/stackexchange-math--1q1a/*.jsonl
-- config_name: stackmathqa-qalist
+- config_name: stackmathqafull-qalist
   data_files: preprocessed/stackexchange-math/*.jsonl
 ```
 
