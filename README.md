@@ -94,6 +94,13 @@ dataset_info:
   - `all.jsonl`: Containing 1.6 million entries.
   - `meta.json`: Metadata and additional information.
 
+```bash
+Source: Stack Exchange (Math), Count: 1244887
+Source: MathOverflow, Count: 110041
+Source: Stack Exchange (Stats), Count: 99878
+Source: Stack Exchange (Physics), Count: 145194
+```
+
 Similar structures are available for StackMathQA800K, StackMathQA400K, StackMathQA200K, and StackMathQA100K subsets.
 
 ### StackMathQA800K
@@ -101,7 +108,13 @@ Similar structures are available for StackMathQA800K, StackMathQA400K, StackMath
 - Contents:
   - `all.jsonl`: Containing 800k entries.
   - `meta.json`: Metadata and additional information.
-
+ 
+```bash
+Source: Stack Exchange (Math), Count: 738850
+Source: MathOverflow, Count: 24276
+Source: Stack Exchange (Stats), Count: 15046
+Source: Stack Exchange (Physics), Count: 21828
+```
 
 ### StackMathQA400K
 
@@ -109,6 +122,13 @@ Similar structures are available for StackMathQA800K, StackMathQA400K, StackMath
 - Contents:
   - `all.jsonl`: Containing 400k entries.
   - `meta.json`: Metadata and additional information.
+  
+```bash
+Source: Stack Exchange (Math), Count: 392940
+Source: MathOverflow, Count: 3963
+Source: Stack Exchange (Stats), Count: 1637
+Source: Stack Exchange (Physics), Count: 1460
+```
  
 ### StackMathQA200K
 
@@ -117,12 +137,26 @@ Similar structures are available for StackMathQA800K, StackMathQA400K, StackMath
   - `all.jsonl`: Containing 200k entries.
   - `meta.json`: Metadata and additional information.
 
+```bash
+Source: Stack Exchange (Math), Count: 197792
+Source: MathOverflow, Count: 1367
+Source: Stack Exchange (Stats), Count: 423
+Source: Stack Exchange (Physics), Count: 418
+```
+
 ### StackMathQA100K
 
 - Location: `./data/stackmathqa100k`
 - Contents:
   - `all.jsonl`: Containing 100k entries.
   - `meta.json`: Metadata and additional information.
+
+```bash
+Source: Stack Exchange (Math), Count: 99013
+Source: MathOverflow, Count: 626
+Source: Stack Exchange (Stats), Count: 182
+Source: Stack Exchange (Physics), Count: 179
+```
 
 ## Citation
 We appreciate your use of StackMathQA in your work. If you find this repository helpful, please consider citing it and star this repo. Feel free to contact zhangyif21@tsinghua.edu.cn or open an issue if you have any questions.
