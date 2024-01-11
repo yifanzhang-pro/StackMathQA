@@ -17,10 +17,10 @@ configs:
 - config_name: stackmathqa200k
   data_files: data/stackmathqa200k/all.jsonl
 - config_name: stackmathqa100k
-  data_files: data/stackmathqa400k/all.jsonl
-- config_name: preprocessed-1q1a
+  data_files: data/stackmathqa100k/all.jsonl
+- config_name: stackmathqa-1q1a
   data_files: preprocessed/stackexchange-math--1q1a/*.jsonl
-- config_name: preprocessed-qalist
+- config_name: stackmathqa-qalist
   data_files: preprocessed/stackexchange-math/*.jsonl
 ```
 
