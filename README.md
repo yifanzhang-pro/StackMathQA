@@ -1,5 +1,5 @@
 # StackMathQA
-StackMathQA is a meticulously curated collection of **2 million** mathematical questions and answers, sourced from various Stack Exchange sites. This repository is designed to serve as a comprehensive resource for researchers, educators, and enthusiasts in the field of mathematics and data science.
+StackMathQA is a meticulously curated collection of **2 million** mathematical questions and answers, sourced from various Stack Exchange sites. This repository is designed to serve as a comprehensive resource for researchers, educators, and enthusiasts in the field of mathematics and AI research.
 
 **Please refer to https://huggingface.co/datasets/math-ai/StackMathQA for downloading the whole dataset.**
 
