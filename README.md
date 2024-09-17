@@ -159,7 +159,7 @@ Source: Stack Exchange (Physics), Count: 179
 ```
 
 ## Citation
-We appreciate your use of StackMathQA in your work. If you find this repository helpful, please consider citing it and star this repo. Feel free to contact zhangyif21@tsinghua.edu.cn or open an issue if you have any questions.
+We appreciate your use of StackMathQA in your work. If you find this repository helpful, please consider citing it and star this repo. Feel free to contact zhangyif21@mails.tsinghua.edu.cn or open an issue if you have any questions.
 
 ```bibtex
 @misc{stackmathqa2024,
