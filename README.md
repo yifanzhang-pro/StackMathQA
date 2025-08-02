@@ -1,170 +1,86 @@
+<div align="center">
+
 # StackMathQA
-StackMathQA is a meticulously curated collection of **2 million** mathematical questions and answers, sourced from various Stack Exchange sites. This repository is designed to serve as a comprehensive resource for researchers, educators, and enthusiasts in the field of mathematics and AI research.
 
-**Please refer to https://huggingface.co/datasets/math-ai/StackMathQA for downloading the whole dataset.**
+[![Technical Report](https://img.shields.io/badge/Technical-Report-blue)]([https://arxiv.org/abs/2411.18104](https://stackmathqa.github.io/StackMathQA.pdf))
+[![Website](https://img.shields.io/badge/Project-Website-green)](https://stackmathqa.github.io)
+[![TemplateGSM](https://img.shields.io/badge/Huggingface-Datasets-blue)](https://huggingface.co/datasets/math-ai/StackMathQA)
 
-## Configs
 
-```YAML
-configs:
-- config_name: stackmathqa1600k
-  data_files: data/stackmathqa1600k/all.jsonl
-  default: true
-- config_name: stackmathqa800k
-  data_files: data/stackmathqa800k/all.jsonl
-- config_name: stackmathqa400k
-  data_files: data/stackmathqa400k/all.jsonl
-- config_name: stackmathqa200k
-  data_files: data/stackmathqa200k/all.jsonl
-- config_name: stackmathqa100k
-  data_files: data/stackmathqa100k/all.jsonl
-- config_name: stackmathqafull-1q1a
-  data_files: preprocessed/stackexchange-math--1q1a/*.jsonl
-- config_name: stackmathqafull-qalist
-  data_files: preprocessed/stackexchange-math/*.jsonl
+StackMathQA: A Curated Collection of 2 Million Mathematical Questions and Answers Sourced from Stack Exchange
+
+</div>
+
+**StackMathQA** is a large-scale dataset featuring nearly **2 million** mathematical question-and-answer pairs, meticulously sourced from the Stack Exchange network. It is designed to be a comprehensive resource for training and evaluating large language models (LLMs) on complex reasoning tasks.
+
+-----
+
+## Key Features
+
+  * **Massive Scale**: Contains approximately 2 million Q\&A pairs, providing extensive data for pre-training and fine-tuning.
+  * **High-Quality Sources**: Aggregates expert and enthusiast content from premier Q\&A sites:
+      * Mathematics Stack Exchange
+      * MathOverflow
+      * Statistics Stack Exchange (Cross Validated)
+      * Physics Stack Exchange
+  * **Curated Subsets**: In addition to the full dataset, we provide smaller, high-quality subsets created using **importance resampling** to ensure they are rich with valuable and informative content.
+  * **Flexible Formats**: Data is available in two convenient formats: one-question-to-many-answers (`qalist`) and one-question-to-one-answer (`1q1a`).
+
+-----
+
+## How to Use
+
+You can easily load any configuration of StackMathQA directly from the Hugging Face Hub.
+
+```python
+from datasets import load_dataset
+
+# Load the default (1.6M) configuration
+dataset = load_dataset("math-ai/StackMathQA", "stackmathqa1600k")
+
+# To load a different subset, specify its name
+# dataset_100k = load_dataset("math-ai/StackMathQA", "stackmathqa100k")
+
+print(dataset['train'][0])
 ```
 
-## Preprocessed Data
-In the `./preprocessed/stackexchange-math` directory and `./preprocessed/stackexchange-math--1q1a` directory, you will find the data structured in two formats:
+\<details\>
+\<summary\>\<b\>View All Configurations\</b\>\</summary\>
 
-1. **Question and List of Answers Format**:
-   Each entry is structured as {"Q": "question", "A_List": ["answer1", "answer2", ...]}.
-   - `math.stackexchange.com.jsonl`: 827,439 lines
-   - `mathoverflow.net.jsonl`: 90,645 lines
-   - `stats.stackexchange.com.jsonl`: 103,024 lines
-   - `physics.stackexchange.com.jsonl`: 117,318 lines
-   - In total: **1,138,426** questions
+  * `stackmathqa1600k` (Default): 1.6 million Q\&A pairs.
+  * `stackmathqa800k`: 800,000 Q\&A pairs.
+  * `stackmathqa400k`: 400,000 Q\&A pairs.
+  * `stackmathqa200k`: 200,000 Q\&A pairs.
+  * `stackmathqa100k`: 100,000 Q\&A pairs.
+  * `stackmathqafull-1q1a`: The complete dataset of 1.9M+ pairs in a one-to-one format.
+  * `stackmathqafull-qalist`: The complete dataset of 1.1M+ questions with answers grouped in a list.
 
-```YAML
-dataset_info:
-  features:
-    - name: Q
-      dtype: string
-      description: "The mathematical question in LaTeX encoded format."
-    - name: A_list
-      dtype: sequence
-      description: "The list of answers to the mathematical question, also in LaTeX encoded."
-    - name: meta
-      dtype: dict
-      description: "A collection of metadata for each question and its corresponding answer list."
-```
+\</details\>
 
-2. **Question and Single Answer Format**:
-   Each line contains a question and one corresponding answer, structured as {"Q": "question", "A": "answer"}. Multiple answers for the same question are separated into different lines.
-   - `math.stackexchange.com.jsonl`: 1,407,739 lines
-   - `mathoverflow.net.jsonl`: 166,592 lines
-   - `stats.stackexchange.com.jsonl`: 156,143 lines
-   - `physics.stackexchange.com.jsonl`: 226,532 lines
-   - In total: **1,957,006** answers
-  
-```YAML
-dataset_info:
-  features:
-    - name: Q
-      dtype: string
-      description: "The mathematical question in LaTeX encoded format."
-    - name: A
-      dtype: string
-      description: "The answer to the mathematical question, also in LaTeX encoded."
-    - name: meta
-      dtype: dict
-      description: "A collection of metadata for each question-answer pair."
-```
-  
-## Selected Data
-The dataset has been carefully curated using importance sampling. We offer selected subsets of the dataset (`./preprocessed/stackexchange-math--1q1a`) with different sizes to cater to varied needs:
+-----
 
-```YAML
-dataset_info:
-  features:
-    - name: Q
-      dtype: string
-      description: "The mathematical question in LaTeX encoded format."
-    - name: A
-      dtype: string
-      description: "The answer to the mathematical question, also in LaTeX encoded."
-    - name: meta
-      dtype: dict
-      description: "A collection of metadata for each question-answer pair."
-```
+## Dataset Structure
 
-### StackMathQA1600K
-- Location: `./data/stackmathqa1600k`
-- Contents:
-  - `all.jsonl`: Containing 1.6 million entries.
-  - `meta.json`: Metadata and additional information.
+Each data entry in the `1q1a` and curated configurations contains the following fields:
 
-```bash
-Source: Stack Exchange (Math), Count: 1244887
-Source: MathOverflow, Count: 110041
-Source: Stack Exchange (Stats), Count: 99878
-Source: Stack Exchange (Physics), Count: 145194
-```
+  * **`Q`** (`string`): The mathematical question, with LaTeX-encoded formulas.
+  * **`A`** (`string`): The corresponding answer, also with LaTeX-encoded formulas.
+  * **`meta`** (`dict`): A dictionary containing metadata, such as the source URL, question ID, answer score, and other relevant information.
 
-Similar structures are available for StackMathQA800K, StackMathQA400K, StackMathQA200K, and StackMathQA100K subsets.
+For the `qalist` configuration, the `A` field is replaced by **`A_list`** (`sequence`), which is a list of all answers for the given question.
 
-### StackMathQA800K
-- Location: `./data/stackmathqa800k`
-- Contents:
-  - `all.jsonl`: Containing 800k entries.
-  - `meta.json`: Metadata and additional information.
- 
-```bash
-Source: Stack Exchange (Math), Count: 738850
-Source: MathOverflow, Count: 24276
-Source: Stack Exchange (Stats), Count: 15046
-Source: Stack Exchange (Physics), Count: 21828
-```
-
-### StackMathQA400K
-
-- Location: `./data/stackmathqa400k`
-- Contents:
-  - `all.jsonl`: Containing 400k entries.
-  - `meta.json`: Metadata and additional information.
-  
-```bash
-Source: Stack Exchange (Math), Count: 392940
-Source: MathOverflow, Count: 3963
-Source: Stack Exchange (Stats), Count: 1637
-Source: Stack Exchange (Physics), Count: 1460
-```
- 
-### StackMathQA200K
-
-- Location: `./data/stackmathqa200k`
-- Contents:
-  - `all.jsonl`: Containing 200k entries.
-  - `meta.json`: Metadata and additional information.
-
-```bash
-Source: Stack Exchange (Math), Count: 197792
-Source: MathOverflow, Count: 1367
-Source: Stack Exchange (Stats), Count: 423
-Source: Stack Exchange (Physics), Count: 418
-```
-
-### StackMathQA100K
-
-- Location: `./data/stackmathqa100k`
-- Contents:
-  - `all.jsonl`: Containing 100k entries.
-  - `meta.json`: Metadata and additional information.
-
-```bash
-Source: Stack Exchange (Math), Count: 99013
-Source: MathOverflow, Count: 626
-Source: Stack Exchange (Stats), Count: 182
-Source: Stack Exchange (Physics), Count: 179
-```
+-----
 
 ## Citation
-We appreciate your use of StackMathQA in your work. If you find this repository helpful, please consider citing it and star this repo. Feel free to contact zhangyif21@mails.tsinghua.edu.cn or open an issue if you have any questions.
+
+If you use StackMathQA in your research, please cite our technical report. We appreciate your support!
 
 ```bibtex
-@misc{stackmathqa2024,
-      title={StackMathQA: A Curated Collection of 2 Million Mathematical Questions and Answers Sourced from Stack Exchange}, 
+@techreport{zhang2024stackmathqa,
+      title={{StackMathQA: A Curated Collection of 2 Million Mathematical Questions and Answers Sourced from Stack Exchange}},
       author={Zhang, Yifan},
       year={2024},
+      institution={ASI Research},
+      howpublished={\url{https://stackmathqa.github.io/StackMathQA.pdf}},
 }
 ```
