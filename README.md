@@ -4,7 +4,7 @@
 
 [![Technical Report](https://img.shields.io/badge/Technical-Report-blue)](https://stackmathqa.github.io/StackMathQA.pdf)
 [![Website](https://img.shields.io/badge/Project-Website-green)](https://stackmathqa.github.io)
-[![TemplateGSM](https://img.shields.io/badge/Huggingface-Datasets-blue)](https://huggingface.co/datasets/math-ai/StackMathQA)
+[![StackMathQA](https://img.shields.io/badge/Huggingface-Datasets-blue)](https://huggingface.co/datasets/math-ai/StackMathQA)
 
 
 StackMathQA: A Curated Collection of 2 Million Mathematical Questions and Answers Sourced from Stack Exchange
